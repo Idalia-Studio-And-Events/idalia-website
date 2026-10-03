@@ -71,9 +71,17 @@
     .nav-links a {
       font-size: 0.8rem; letter-spacing: 0.15em; text-transform: uppercase;
       color: var(--cream-2); text-decoration: none; transition: color 0.3s;
-      font-weight: 600;
+      font-weight: 600; position: relative;
+    }
+    .nav-links a::after {
+      content: '';
+      position: absolute; bottom: -4px; left: 0; right: 0; height: 1px;
+      background: var(--gold);
+      transform: scaleX(0); transform-origin: right;
+      transition: transform 0.3s ease;
     }
     .nav-links a:hover { color: var(--gold-soft); }
+    .nav-links a:hover::after, .nav-links a.active::after { transform: scaleX(1); transform-origin: left; }
     .nav-links a.active, .nav-links .dropdown-toggle.active { color: var(--gold-soft); }
 
     
@@ -260,14 +268,14 @@
         </ul>
       </li>
       <li><a href="services.html">What We Do</a></li>
-      <li><a href="news.html">News and Updates</a></li>
+      <li><a href="news.html" class="active">News and Updates</a></li>
       <li><a href="work-with-us.html">Work With Us</a></li>
     </ul>
   </div>
 
   
   <nav id="navbar">
-    <a href="media-services-website.html" class="logo">
+    <a href="index.html" class="logo">
       <img src="images/idalia_logo_cropped.png" alt="Idalia Studio and Events Ltd logo">
     </a>
     <ul class="nav-links">
@@ -298,7 +306,7 @@
         <p>Here you'll find updates about our services, client highlights, and all news and events posted from Idalia Studio and Events.</p>
       </div>
     </div>
-    <div class="top"><a href="media-services-website.html"><span class="back-icon" aria-hidden="true">←</span> Back to Home</a></div>
+    <div class="top"><a href="index.html"><span class="back-icon" aria-hidden="true">←</span> Back to Home</a></div>
     <div class="news-list">
       <article class="news-card">
         <h2>Coming soon</h2>
